@@ -2,120 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vibhav | Cybersecurity Portfolio</title>
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vibhav Chennamadhava | Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="container nav__container">
-      <a href="#" class="nav__logo">Vibhav</a>
-      <ul class="nav__menu">
-        <li><a href="#home">Home</a></li>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Vibhav</div>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header id="home" class="hero container">
-    <h1>Hi, I'm <span>Vibhav</span></h1>
-    <p>Cybersecurity | Network Analysis | DevOps Security</p>
-    <a href="#projects" class="btn">View My Work</a>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-content">
+      <h1>Vibhav Chennamadhava</h1>
+      <p>Cybersecurity • Network Analysis • Cloud & DevOps</p>
+    </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="container about__container">
-    <h2>About Me</h2>
-    <p>
-      I am a cybersecurity graduate student and security engineer with experience in network traffic analysis, SIEM monitoring, incident response support, vulnerability assessments, and secure infrastructure design. I enjoy hands-on security labs, network protocol analysis, secure system deployments, and sharing knowledge through technical write-ups.
-    </p>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="container skills__container">
-    <h2>Skills</h2>
-    <div class="skills_cards">
-
-      <article class="skill">
-        <i class="fa-solid fa-shield-halved"></i>
-        <h5>Network Security</h5>
-      </article>
-
-      <article class="skill">
-        <i class="fa-solid fa-wifi"></i>
-        <h5>Packet Analysis (Wireshark)</h5>
-      </article>
-
-      <article class="skill">
-        <i class="fa-solid fa-server"></i>
-        <h5>Infrastructure Hardening</h5>
-      </article>
-
-      <article class="skill">
-        <i class="fa-solid fa-terminal"></i>
-        <h5>Linux Administration</h5>
-      </article>
-
-      <article class="skill">
-        <i class="fa-solid fa-code"></i>
-        <h5>Python & Bash</h5>
-      </article>
-
-      <article class="skill">
-        <i class="fa-solid fa-network-wired"></i>
-        <h5>Protocol Analysis</h5>
-      </article>
-
-      <article class="skill">
-        <i class="fa-solid fa-file-lines"></i>
-        <h5>Security Documentation</h5>
-      </article>
-
-      <article class="skill">
-        <i class="fa-solid fa-certificate"></i>
-        <h5>Compliance & Governance</h5>
-      </article>
-
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a cybersecurity-focused graduate student and former DevOps & Cybersecurity Engineer
+        with hands-on experience in network traffic analysis, SIEM monitoring, incident response,
+        and secure infrastructure design.
+      </p>
+      <p>
+        I specialize in understanding systems at the protocol level and translating security
+        signals into actionable insights through real-world labs and infrastructure projects.
+      </p>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="container projects__container">
-    <h2>Projects</h2>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section section-dark">
+    <div class="container">
+      <h2>Experience</h2>
 
-    <article class="project">
-      <h3>Password_manager</h3>
-      <p>Built a secure desktop password manager using Python and Tkinter with AES-256-GCM encryption, master-password authentication, encrypted local vault storage, and secure clipboard handling with auto-clear functionality.</p>
-      <a href="https://github.com/VibhavChennamadhava/Password_manager" class="btn" target="_blank">View on GitHub</a>
-    </article>
+      <h3>DevOps & Cybersecurity Engineer — Accenture</h3>
+      <p class="muted">Hyderabad, India | Feb 2021 – May 2023</p>
 
-    <article class="project">
-      <h3>SMTP Mail Server Infrastructure</h3>
-      <p>Designed and deployed an SMTP mail server with secure DNS (SPF, DKIM, DMARC) and TLS using iRedMail.</p>
-      <a href="https://github.com/VibhavChennamadhava/smtp-mail-server-infrastructure" class="btn" target="_blank">View on GitHub</a>
-    </article>
-
+      <ul>
+        <li>Monitored and investigated security events using SIEM platforms.</li>
+        <li>Performed log analysis and classified alerts by severity and impact.</li>
+        <li>Supported incident response with evidence collection and documentation.</li>
+        <li>Conducted vulnerability assessments and tracked remediation.</li>
+        <li>Supported compliance efforts aligned with NIST, SOC 2, and GDPR.</li>
+        <li>Built dashboards and reports to communicate risk posture.</li>
+        <li>Automated security workflows using Python and Bash.</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="container contact__container">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:vibhav.chennamadhava@gmail.com">vibhav.chennamadhava@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/vibhav-chennamadhava-61184b190/" target="_blank">linkedin.com/in/<your-linkedin></a></p>
-    <p>GitHub: <a href="https://github.com/VibhavChennamadhava" target="_blank">github.com/VibhavChennamadhava</a></p>
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <h3>Packet Analysis Fundamentals (Wireshark)</h3>
+        <p>
+          Analyzed Ethernet frames, IP packets, and TCP segments to understand
+          encapsulation, addressing, and transport-layer behavior.
+        </p>
+        <a href="https://github.com/VibhavChennamadhava/packet-analysis-fundamentals" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>HTTP Traffic Analysis Using Wireshark</h3>
+        <p>
+          Inspected HTTP request and response flows over TCP, including handshakes,
+          headers, and session teardown.
+        </p>
+        <a href="https://github.com/VibhavChennamadhava/http-traffic-analysis-wireshark" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>SMTP Mail Server Infrastructure</h3>
+        <p>
+          Designed and deployed a secure SMTP mail server with DNS configuration,
+          TLS, SPF, DKIM, DMARC, and reverse DNS.
+        </p>
+        <a href="https://github.com/VibhavChennamadhava/smtp-mail-server-infrastructure" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
   </section>
 
+  <!-- SKILLS -->
+  <section id="skills" class="section section-dark">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span>Wireshark</span>
+        <span>TCP/IP</span>
+        <span>HTTP</span>
+        <span>DNS</span>
+        <span>SMTP</span>
+        <span>SIEM Monitoring</span>
+        <span>Incident Response</span>
+        <span>Vulnerability Assessment</span>
+        <span>Python</span>
+        <span>Bash</span>
+        <span>Linux</span>
+        <span>NIST / SOC 2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:vibhav.chennamadhava@gmail.com">vibhav.chennamadhava@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/VibhavChennamadhava" target="_blank">github.com/VibhavChennamadhava</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 Vibhav Chennamadhava</p>
   </footer>
