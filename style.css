@@ -1,3 +1,6 @@
+/* ------------------------------ */
+/* RESET & BASE STYLES */
+/* ------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -6,65 +9,133 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
+  background: #0d1117;
+  color: #c9d1d9;
   line-height: 1.6;
 }
 
+/* NAVIGATION */
 nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background: #020617;
+  background: #161b22;
+  padding: 12px 20px;
+  border-bottom: 1px solid #30363d;
 }
 
-nav ul {
+nav .nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav__menu {
+  list-style: none;
   display: flex;
   gap: 20px;
-  list-style: none;
 }
 
 nav a {
-  color: #38bdf8;
   text-decoration: none;
+  color: #58a6ff;
+  font-weight: bold;
 }
 
-.hero {
+/* HERO */
+header.hero {
   text-align: center;
   padding: 80px 20px;
+  background: #161b22;
 }
 
+header.hero h1 {
+  color: #58a6ff;
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+}
+
+header.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+
+/* HEADINGS */
+h2 {
+  color: #58a6ff;
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+/* SECTIONS */
 section {
   padding: 60px 20px;
   max-width: 900px;
   margin: auto;
 }
 
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+/* SKILLS */
+.skills_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
 }
 
-.skills-grid span {
-  background: #1e293b;
-  padding: 8px 12px;
-  border-radius: 6px;
-}
-
-.project-card {
-  background: #1e293b;
-  padding: 20px;
+.skills_cards .skill {
+  background: #161b22;
+  padding: 16px;
+  border: 1px solid #30363d;
   border-radius: 8px;
-  margin-bottom: 20px;
+  text-align: center;
+  color: #58a6ff;
 }
 
-.project-card a {
-  color: #38bdf8;
+.skills_cards .skill i {
+  font-size: 2rem;
+  margin-bottom: 8px;
 }
 
+/* PROJECTS */
+.projects__container .project {
+  background: #161b22;
+  padding: 20px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+}
+
+.projects__container .project h3 {
+  margin-bottom: 8px;
+  color: #58a6ff;
+}
+
+.projects__container .project p {
+  margin-bottom: 12px;
+}
+
+/* BUTTONS */
+.btn {
+  background: #1f6feb;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* CONTACT */
+.contact__container a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #020617;
+  padding: 14px;
+  border-top: 1px solid #30363d;
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: #8b949e;
 }

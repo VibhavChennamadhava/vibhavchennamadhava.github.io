@@ -1,83 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibhav | Cybersecurity Portfolio</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav>
-  <h2>Your Name</h2>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Navbar -->
+  <nav>
+    <div class="container nav__container">
+      <a href="#" class="nav__logo">Vibhav</a>
+      <ul class="nav__menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<header class="hero">
-  <h1>Hi, I'm Your Name</h1>
-  <p>Cybersecurity & Network Analysis</p>
-</header>
+  <!-- Hero Section -->
+  <header id="home" class="hero container">
+    <h1>Hi, I'm <span>Vibhav</span></h1>
+    <p>Cybersecurity | Network Analysis | DevOps Security</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a cybersecurity-focused graduate student with hands-on experience
-    in network traffic analysis, protocol inspection, and secure infrastructure
-    deployment. This portfolio highlights real-world labs and projects.
-  </p>
-</section>
+  <!-- About Section -->
+  <section id="about" class="container about__container">
+    <h2>About Me</h2>
+    <p>
+      I am a cybersecurity graduate student and security engineer with experience in network traffic analysis, SIEM monitoring, incident response support, vulnerability assessments, and secure infrastructure design. I enjoy hands-on security labs, network protocol analysis, secure system deployments, and sharing knowledge through technical write-ups.
+    </p>
+  </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <span>Wireshark</span>
-    <span>TCP/IP</span>
-    <span>HTTP</span>
-    <span>DNS</span>
-    <span>SMTP</span>
-    <span>Linux</span>
-    <span>Network Security</span>
-  </div>
-</section>
+  <!-- Skills Section -->
+  <section id="skills" class="container skills__container">
+    <h2>Skills</h2>
+    <div class="skills_cards">
 
-<section id="projects">
-  <h2>Projects</h2>
+      <article class="skill">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h5>Network Security</h5>
+      </article>
 
-  <div class="project-card">
-    <h3>Packet Analysis with Wireshark</h3>
-    <p>Low-level packet inspection across Ethernet, IP, and TCP layers.</p>
-    <a href="https://github.com/your-username/packet-analysis-fundamentals" target="_blank">View Project</a>
-  </div>
+      <article class="skill">
+        <i class="fa-solid fa-wifi"></i>
+        <h5>Packet Analysis (Wireshark)</h5>
+      </article>
 
-  <div class="project-card">
-    <h3>HTTP Traffic Analysis</h3>
-    <p>Analyzing HTTP requests and responses over TCP using Wireshark.</p>
-    <a href="https://github.com/your-username/http-traffic-analysis-wireshark" target="_blank">View Project</a>
-  </div>
+      <article class="skill">
+        <i class="fa-solid fa-server"></i>
+        <h5>Infrastructure Hardening</h5>
+      </article>
 
-  <div class="project-card">
-    <h3>SMTP Mail Server (iRedMail)</h3>
-    <p>Designed and deployed a secure SMTP mail server with DNS and TLS.</p>
-    <a href="https://github.com/your-username/smtp-mail-server-infrastructure" target="_blank">View Project</a>
-  </div>
+      <article class="skill">
+        <i class="fa-solid fa-terminal"></i>
+        <h5>Linux Administration</h5>
+      </article>
 
-</section>
+      <article class="skill">
+        <i class="fa-solid fa-code"></i>
+        <h5>Python & Bash</h5>
+      </article>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: your.email@example.com</p>
-  <p>GitHub: <a href="https://github.com/your-username">your-username</a></p>
-  <p>LinkedIn: <a href="#">LinkedIn Profile</a></p>
-</section>
+      <article class="skill">
+        <i class="fa-solid fa-network-wired"></i>
+        <h5>Protocol Analysis</h5>
+      </article>
 
-<footer>
-  <p>© 2026 Your Name</p>
-</footer>
+      <article class="skill">
+        <i class="fa-solid fa-file-lines"></i>
+        <h5>Security Documentation</h5>
+      </article>
+
+      <article class="skill">
+        <i class="fa-solid fa-certificate"></i>
+        <h5>Compliance & Governance</h5>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container projects__container">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <h3>Packet Analysis Fundamentals</h3>
+      <p>Analyzed Ethernet, IP, and TCP packets using Wireshark to understand encapsulation and traffic flow.</p>
+      <a href="https://github.com/VibhavChennamadhava/packet-analysis-fundamentals" class="btn" target="_blank">View on GitHub</a>
+    </article>
+
+    <article class="project">
+      <h3>HTTP Traffic Analysis Using Wireshark</h3>
+      <p>Performed packet-level inspection of HTTP requests & responses to understand client-server interactions.</p>
+      <a href="https://github.com/VibhavChennamadhava/http-traffic-analysis-wireshark" class="btn" target="_blank">View on GitHub</a>
+    </article>
+
+    <article class="project">
+      <h3>SMTP Mail Server Infrastructure</h3>
+      <p>Designed and deployed an SMTP mail server with secure DNS (SPF, DKIM, DMARC) and TLS using iRedMail.</p>
+      <a href="https://github.com/VibhavChennamadhava/smtp-mail-server-infrastructure" class="btn" target="_blank">View on GitHub</a>
+    </article>
+
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container contact__container">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:vibhav.chennamadhava@gmail.com">vibhav.chennamadhava@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/<your-linkedin>" target="_blank">linkedin.com/in/<your-linkedin></a></p>
+    <p>GitHub: <a href="https://github.com/VibhavChennamadhava" target="_blank">github.com/VibhavChennamadhava</a></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Vibhav Chennamadhava</p>
+  </footer>
 
 </body>
 </html>
