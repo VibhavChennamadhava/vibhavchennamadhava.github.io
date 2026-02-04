@@ -1,3 +1,3 @@
 # Vibhav Portfolio 
 
-href="**vibhavchennamadhava.io**" built using Astro + Tailwind.
+**vibhavchennamadhava.io** built using Astro + Tailwind.
