@@ -1,0 +1,26 @@
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [
+    tailwind(),
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+    })
+  ],
+  // Your GitHub Pages domain (user site)
+  site: 'https://vibhavchennamadhava.io',
+  output: 'static',
+  build: {
+    assets: 'assets'
+  },
+  vite: {
+    build: {
+      cssMinify: true,
+    }
+  }
+});

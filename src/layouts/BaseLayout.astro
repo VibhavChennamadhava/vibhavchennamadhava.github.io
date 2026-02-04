@@ -1,0 +1,131 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  keywords?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = 'Sri Vibhav Raju Chennamadhava | Cybersecurity & Cloud Security',
+  description = 'Cybersecurity portfolio for Sri Vibhav Raju Chennamadhava: security operations, incident triage, log analysis, vulnerability management, and cloud/IAM.',
+  image = undefined,
+  keywords = 'cybersecurity, soc, security operations, incident response, siem, splunk, elk, wazuh, vulnerability management, qualys, nessus, cloud security, azure, aws, iam, entra id',
+  canonicalUrl,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() || 'http://localhost:4321';
+const currentPath = Astro.url.pathname;
+const fullUrl = canonicalUrl || new URL(currentPath, siteUrl).toString();
+const fullImageUrl = image
+  ? (image.startsWith('http') ? image : new URL(image, siteUrl).toString())
+  : '';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{title}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Sri Vibhav Raju Chennamadhava" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href={fullUrl} />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f2385a" />
+    <meta name="msapplication-TileColor" content="#0a0a0b" />
+    <meta name="theme-color" content="#0a0a0b" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Vibhav Chennamadhava" />
+    <meta property="og:title" content={title} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:description" content={description} />
+    {fullImageUrl && <meta property="og:image" content={fullImageUrl} />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {fullImageUrl && <meta name="twitter:card" content="summary_large_image" />}
+    {fullImageUrl && <meta name="twitter:image" content={fullImageUrl} />}
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <!-- Add analytics later if you want (kept intentionally empty for privacy) -->
+  </head>
+  <body class="bg-bg-primary text-text-primary antialiased">
+    <!-- Custom cursor (desktop only) -->
+    <div class="cursor-dot hidden lg:block"></div>
+    <div class="cursor-outline hidden lg:block"></div>
+
+    <slot />
+
+    <!-- Initialize Lucide icons -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      });
+    </script>
+
+    <script>
+      import { gsap } from 'gsap';
+
+      // Custom cursor
+      const cursorDot = document.querySelector('.cursor-dot');
+      const cursorOutline = document.querySelector('.cursor-outline');
+
+      if (cursorDot && cursorOutline && window.matchMedia('(hover: hover)').matches) {
+        window.addEventListener('mousemove', (e) => {
+          gsap.to(cursorDot, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1,
+          });
+          gsap.to(cursorOutline, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.3,
+          });
+        });
+
+        // Expand cursor on interactive elements
+        document.querySelectorAll('a, button, [data-cursor]').forEach((el) => {
+          el.addEventListener('mouseenter', () => {
+            gsap.to(cursorOutline, { scale: 2, opacity: 1, duration: 0.3 });
+            gsap.to(cursorDot, { scale: 0.5, duration: 0.3 });
+          });
+          el.addEventListener('mouseleave', () => {
+            gsap.to(cursorOutline, { scale: 1, opacity: 0.5, duration: 0.3 });
+            gsap.to(cursorDot, { scale: 1, duration: 0.3 });
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

@@ -1,0 +1,12 @@
+# robots.txt
+# https://vibhavchennamadhava.io
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://vibhavchennamadhava.io/sitemap-index.xml
+
+# Disallow admin or private paths (if any)
+Disallow: /api/
+Disallow: /_astro/

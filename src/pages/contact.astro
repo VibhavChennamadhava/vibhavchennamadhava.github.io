@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+
+const contactMethods = [
+  {
+    title: 'Email',
+    description: 'Reach me directly',
+    icon: 'mail',
+    href: 'mailto:vibhav.chennamadhava@gmail.com',
+    color: 'coral',
+  },
+  {
+    title: 'LinkedIn',
+    description: 'Connect professionally',
+    icon: 'linkedin',
+    href: 'https://www.linkedin.com/in/vibhav-chennamadhava-61184b190',
+    color: 'teal',
+  },
+  {
+    title: 'GitHub',
+    description: 'See projects and labs',
+    icon: 'github',
+    href: 'https://github.com/VibhavChennamadhava',
+    color: 'orange',
+  },
+  {
+    title: 'Resume',
+    description: 'Download PDF',
+    icon: 'file-text',
+    href: '/resume.pdf',
+    color: 'blue',
+  },
+];
+
+---
+
+<BaseLayout title="Contact - Vibhav Chennamadhava" description="Contact Vibhav (email, LinkedIn, GitHub) and download the resume.">
+  <Header currentPage="contact" />
+
+  <main class="pt-[72px]">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-bg-primary">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6" data-animate="fade-up">
+            Get In Touch
+          </h1>
+          <p class="text-xl text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
+            Email, LinkedIn, GitHub, and resume links.
+          </p>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {contactMethods.map((method, index) => (
+            <a
+              href={method.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-bg-card border border-border-default rounded-2xl p-6 text-center transition-all duration-300 hover:border-border-accent hover:-translate-y-1"
+              data-animate="fade-up"
+              data-delay={index * 100}
+            >
+              <div class={`w-14 h-14 mx-auto mb-4 rounded-xl bg-bg-hover flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
+                <i data-lucide={method.icon} class={`w-7 h-7 text-accent-${method.color}`}></i>
+              </div>
+              <h3 class="text-lg font-semibold text-text-primary mb-2">{method.title}</h3>
+              <p class="text-text-muted text-sm">{method.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple CTA -->
+    <section class="py-16 bg-bg-secondary">
+      <div class="container">
+        <div class="max-w-3xl mx-auto text-center" data-animate="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            Best way to reach me
+          </h2>
+          <p class="text-text-secondary mb-8">
+            Email is fastest. If you are a recruiter, please include role title, location, and a quick summary of the tech stack.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button href="mailto:vibhav.chennamadhava@gmail.com" variant="primary" external>
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              Email Me
+            </Button>
+            <Button href="https://www.linkedin.com/in/vibhav-chennamadhava-61184b190" variant="secondary" external>
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+              Message on LinkedIn
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
+    const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      delay,
+      ease: 'power2.out',
+    });
+  });
+</script>

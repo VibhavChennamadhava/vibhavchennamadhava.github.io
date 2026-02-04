@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getProjects } from '../data/projects';
+
+// Fetch project data with GitHub stats at build time
+const { featured: featuredProjects } = await getProjects();
+---
+
+<BaseLayout title="Projects - Vibhav Chennamadhava" description="Security labs, writeups, and small tools built by Vibhav Chennamadhava.">
+  <Header currentPage="projects" />
+
+  <main class="pt-[72px]">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-bg-primary">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6" data-animate="fade-up">
+            Projects & Labs
+          </h1>
+          <p class="text-xl text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
+            Practical security writeups and hands-on labs focused on investigation, detection, and remediation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-16 bg-bg-secondary">
+      <div class="container">
+        <div class="mb-8">
+          <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-2">Featured</p>
+          <h2 class="text-3xl font-bold text-text-primary" data-animate="fade-up">Selected Work</h2>
+          <p class="text-text-secondary mt-2" data-animate="fade-up" data-delay="100">
+            Each item is designed to show clear thinking: evidence → root cause → impact → mitigation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {featuredProjects.map((project, index) => (
+            <div data-animate="fade-up" data-delay={index * 100}>
+              <ProjectCard {...project} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
+    const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      delay,
+      ease: 'power2.out',
+    });
+  });
+</script>
