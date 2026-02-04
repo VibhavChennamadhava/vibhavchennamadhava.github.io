@@ -2,7 +2,7 @@
   "name": "vibhav-portfolio",
   "type": "module",
   "version": "2.0.0",
-  "description": "Vibhav Chennamadhava - Cybersecurity & Cloud Security Portfolio",
+  "description": "Sri Vibhav Raju Chennamadhava - DevSecOps, DevOps & Cybersecurity Portfolio",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

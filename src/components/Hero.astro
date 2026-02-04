@@ -3,8 +3,8 @@ import Button from './Button.astro';
 
 const stats = [
   { value: '2+ yrs', label: 'Enterprise Experience' },
-  { value: '3', label: 'Certifications' },
-  { value: '5+', label: 'Security Labs & Projects' },
+  { value: 'DevOps', label: 'CI/CD • IaC • K8s' },
+  { value: 'Security', label: 'SOC • VM • Cloud' },
 ];
 ---
 
@@ -20,6 +20,16 @@ const stats = [
 
   <div class="container relative z-10">
     <div class="max-w-4xl mx-auto text-center">
+      <!-- Avatar -->
+      <div class="mx-auto mb-8 w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden ring-4 ring-accent-coral/30 bg-bg-hover border border-border-default">
+        <img
+          src="/profile.jpg"
+          alt="Vibhav Chennamadhava"
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+
       <!-- Title -->
       <h1 class="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-text-primary mb-6 tracking-tight">
         <span class="block" data-animate="split-text">VIBHAV CHENNAMADHAVA</span>
@@ -27,13 +37,12 @@ const stats = [
 
       <!-- Tagline -->
       <p class="hero-tagline text-xl sm:text-2xl md:text-3xl text-text-secondary mb-4" data-animate="fade-up" data-delay="200">
-        Cybersecurity & Cloud Security • <span class="text-accent-coral font-semibold">Security Operations</span>
+        DevSecOps • DevOps • Cybersecurity • <span class="text-accent-coral font-semibold">Cloud & IAM</span>
       </p>
 
       <!-- Description -->
       <p class="hero-description text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-10" data-animate="fade-up" data-delay="400">
-        Cybersecurity practitioner with hands-on experience in security monitoring, incident triage, log analysis,
-        vulnerability management, and IAM support across cloud and enterprise environments.
+        Hands-on in CI/CD automation, Terraform/IaC, Docker/Kubernetes, monitoring, plus security operations (SIEM, incident response support, vulnerability management, and cloud/IAM fundamentals).
       </p>
 
       <!-- CTAs -->
