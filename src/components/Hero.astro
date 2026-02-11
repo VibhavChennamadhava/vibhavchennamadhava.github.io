@@ -6,6 +6,17 @@ const stats = [
   { value: 'DevOps', label: 'CI/CD • IaC • K8s' },
   { value: 'Security', label: 'SOC • VM • Cloud' },
 ];
+
+const featuredHighlights = [
+  {
+    label: 'Password Manager (AES-256-GCM)',
+    href: 'https://github.com/VibhavChennamadhava/Password_manager',
+  },
+  {
+    label: 'SMTP Mail Server Lab (SPF/DKIM/DMARC)',
+    href: 'https://github.com/VibhavChennamadhava/Designing-an-SMTP-Mail-Server-Using-iRedMail',
+  },
+];
 ---
 
 <section class="hero relative min-h-screen flex items-center pt-[72px] overflow-hidden">
@@ -41,19 +52,46 @@ const stats = [
       </p>
 
       <!-- Description -->
-      <p class="hero-description text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-10" data-animate="fade-up" data-delay="400">
-        Hands-on in CI/CD automation, Terraform/IaC, Docker/Kubernetes, monitoring, plus security operations (SIEM, incident response support, vulnerability management, and cloud/IAM fundamentals).
+      <p class="hero-description text-base sm:text-lg text-text-muted max-w-3xl mx-auto mb-6" data-animate="fade-up" data-delay="400">
+        Hands-on in CI/CD automation, Terraform/IaC, Docker/Kubernetes, monitoring, plus security operations (SIEM, incident response support, vulnerability management, and cloud/IAM fundamentals). Targeting SOC Analyst, Security Engineer, and Cloud Security roles.
       </p>
 
-      <!-- CTAs -->
-      <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4 mb-16" data-animate="fade-up" data-delay="600">
-        <Button href="/projects" variant="primary" size="lg">
-          View Projects
-        </Button>
-        <Button href="/resume.pdf" variant="secondary" size="lg" external>
+      <!-- Top CTA -->
+      <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-3 mb-8" data-animate="fade-up" data-delay="500">
+        <Button href="/resume.pdf" variant="primary" size="lg" external>
           <i data-lucide="file-text" class="w-5 h-5"></i>
-          Download Resume
+          Resume
         </Button>
+        <Button href="https://github.com/VibhavChennamadhava" variant="secondary" size="lg" external>
+          <i data-lucide="github" class="w-5 h-5"></i>
+          GitHub
+        </Button>
+        <Button href="https://www.linkedin.com/in/vibhav-chennamadhava-61184b190" variant="secondary" size="lg" external>
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
+          LinkedIn
+        </Button>
+        <Button href="mailto:vibhav.chennamadhava@gmail.com" variant="secondary" size="lg" external>
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          Email
+        </Button>
+      </div>
+
+      <!-- Featured work above the fold -->
+      <div class="bg-bg-card/60 border border-border-default rounded-2xl p-6 mb-10" data-animate="fade-up" data-delay="600">
+        <div class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-3">Featured</div>
+        <div class="grid gap-3 sm:grid-cols-2 text-left">
+          {featuredHighlights.map((item) => (
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between gap-3 bg-bg-hover border border-border-default rounded-xl px-4 py-3 text-sm text-text-secondary hover:border-border-accent hover:text-text-primary transition-all"
+            >
+              <span>{item.label}</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+          ))}
+        </div>
       </div>
 
       <!-- Stats -->

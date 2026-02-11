@@ -1,11 +1,19 @@
 ---
+interface Link {
+  label: string;
+  href: string;
+}
+
 interface Props {
   title: string;
-  subtitle?: string;
-  description: string;
+  subtitle: string;
+  outcome: string;
+  whatBuilt: string;
+  techStack: string[];
+  securityFocus: string;
   icon?: string;
   iconColor?: 'coral' | 'teal' | 'orange' | 'blue';
-  tags: string[];
+  links: Link[];
   stars?: number;
   forks?: number;
   href: string;
@@ -15,14 +23,15 @@ interface Props {
 const {
   title,
   subtitle,
-  description,
+  outcome,
+  whatBuilt,
+  techStack,
+  securityFocus,
   icon,
   iconColor = 'coral',
-  tags,
+  links,
   stars,
   forks,
-  href,
-  githubUrl,
 } = Astro.props;
 
 const iconColors = {
@@ -59,29 +68,37 @@ const formatNumber = (num: number) => {
     </div>
     <div class="min-w-0">
       <h3 class="text-lg font-semibold text-text-primary truncate">{title}</h3>
-      {subtitle && (
-        <p class="text-sm text-text-muted">{subtitle}</p>
-      )}
+      <p class="text-sm text-text-muted">{subtitle}</p>
     </div>
   </div>
 
-  <!-- Description -->
-  <p class="text-text-secondary text-sm mb-4 line-clamp-2">
-    {description}
+  <!-- Outcome -->
+  <p class="text-text-secondary text-sm mb-4">
+    {outcome}
   </p>
 
-  <!-- Tags -->
-  <div class="flex flex-wrap gap-2 mb-4">
-    {tags.slice(0, 3).map((tag) => (
-      <span class="px-3 py-1 text-xs font-medium text-text-muted bg-bg-hover rounded-full">
-        {tag}
-      </span>
-    ))}
+  <div class="space-y-3 text-sm text-text-secondary">
+    <div>
+      <div class="text-xs uppercase tracking-wide text-text-muted mb-1">What I built</div>
+      <p>{whatBuilt}</p>
+    </div>
+    <div>
+      <div class="text-xs uppercase tracking-wide text-text-muted mb-1">Tech stack</div>
+      <ul class="flex flex-wrap gap-2">
+        {techStack.map((item) => (
+          <li class="px-3 py-1 text-xs font-medium text-text-muted bg-bg-hover rounded-full">{item}</li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <div class="text-xs uppercase tracking-wide text-text-muted mb-1">Security focus</div>
+      <p>{securityFocus}</p>
+    </div>
   </div>
 
   <!-- Stats -->
   {(stars !== undefined || forks !== undefined) && (
-    <div class="flex items-center gap-4 mb-4">
+    <div class="flex items-center gap-4 mt-4">
       {stars !== undefined && (
         <div class="flex items-center gap-1.5">
           <span class="text-base">⭐</span>
@@ -98,34 +115,19 @@ const formatNumber = (num: number) => {
   )}
 
   <!-- Actions -->
-  <div class="flex items-center gap-3">
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-4 py-2 bg-accent-coral text-white text-sm font-semibold rounded-lg hover:brightness-110 transition-all duration-200"
-    >
-      View Project
-    </a>
-    {githubUrl && href !== githubUrl && (
+  <div class="flex flex-wrap items-center gap-3 mt-5">
+    {links.map((link, idx) => (
       <a
-        href={githubUrl}
+        href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-border-default text-text-secondary text-sm rounded-lg hover:bg-bg-hover hover:text-text-primary transition-all duration-200"
+        class={idx === 0
+          ? 'inline-flex items-center gap-2 px-4 py-2 bg-accent-coral text-white text-sm font-semibold rounded-lg hover:brightness-110 transition-all duration-200'
+          : 'inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-border-default text-text-secondary text-sm rounded-lg hover:bg-bg-hover hover:text-text-primary transition-all duration-200'
+        }
       >
-        <i data-lucide="github" class="w-4 h-4"></i>
-        GitHub
+        {link.label}
       </a>
-    )}
+    ))}
   </div>
 </article>
-
-<style>
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>
