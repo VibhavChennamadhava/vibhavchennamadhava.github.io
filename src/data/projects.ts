@@ -26,6 +26,20 @@ export interface Project {
 const projectDefinitions: Record<string, Omit<Project, 'stars' | 'forks'>[]> = {
   featured: [
     {
+      title: 'Microsoft Sentinel Training Lab',
+      subtitle: 'SOC Detection Engineering',
+      outcome: 'Built a Sentinel-based SOC lab to practice detection rules, incident triage, and investigation workflows in Microsoft security tooling.',
+      whatBuilt: 'Configured Microsoft Sentinel workspace, ingested telemetry, wrote analytics rules, and validated alert-to-incident investigation flows.',
+      techStack: ['Microsoft Sentinel', 'KQL', 'Log Analytics', 'Incident Response'],
+      securityFocus: 'Cloud-native threat detection, alert tuning, and SOC investigation playbooks.',
+      iconColor: 'teal',
+      links: [
+        { label: 'Project Repo', href: 'https://github.com/VibhavChennamadhava/Microsoft-Sentinel-Training-Lab' },
+      ],
+      href: 'https://github.com/VibhavChennamadhava/Microsoft-Sentinel-Training-Lab',
+      githubUrl: 'https://github.com/VibhavChennamadhava/Microsoft-Sentinel-Training-Lab',
+    },
+    {
       title: 'Password Manager',
       subtitle: 'Python • Application Security',
       outcome: 'Built an offline desktop vault with strong cryptography and safer clipboard handling to reduce password leakage risk.',
