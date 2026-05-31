@@ -12,75 +12,65 @@ const projects = await getFeaturedProjects(6);
 
 const focusAreas = [
   {
-    title: 'Infrastructure as Code',
-    icon: 'layers',
-    points: ['Terraform modules', 'AWS CloudFormation basics', 'Ansible configuration'],
-  },
-  {
-    title: 'Containers & Observability',
-    icon: 'boxes',
-    points: ['Docker + Kubernetes fundamentals', 'Prometheus/Grafana monitoring', 'ELK/Splunk log basics'],
+    title: 'Enterprise Networking',
+    icon: 'network',
+    points: ['CCNA routing/switching', 'VLANs, STP, EtherChannel, OSPF', 'ACLs, NAT, DHCP, troubleshooting'],
   },
   {
     title: 'Security Operations',
     icon: 'shield-alert',
-    points: ['SIEM alert triage', 'Vulnerability management', 'IAM support & hardening', 'Threat intelligence'],
+    points: ['Microsoft Sentinel + Wazuh labs', 'Incident triage and evidence notes', 'Vulnerability management workflows'],
   },
   {
-    title: 'Offensive Tooling',
-    icon: 'alert-triangle',
-    points: ['Nmap', 'Kali Linux', 'OWASP ZAP', 'Nikto', 'Python scripting'],
+    title: 'Cloud & IAM Security',
+    icon: 'cloud-cog',
+    points: ['Azure/AWS security fundamentals', 'Identity reviews and access hardening', 'Zero Trust and least privilege'],
   },
   {
-    title: 'CI/CD & Automation',
+    title: 'DevSecOps Automation',
     icon: 'workflow',
-    points: ['Jenkins & GitHub Actions pipelines', 'Build/test/deploy automation', 'Release hygiene & rollbacks'],
+    points: ['GitHub Actions and Jenkins', 'Terraform/IaC and Linux automation', 'Monitoring, logging, and release hygiene'],
   },
 ];
 
 const certifications = [
+  { name: 'Cisco Certified Network Associate (CCNA)', meta: 'Certified • Enterprise networking, routing/switching, IP services, security fundamentals, and automation' },
   { name: 'CompTIA Security+ (SY0-701)', meta: 'Issued Jul 15, 2025 • Expires Jul 15, 2028' },
+  { name: 'ISC2 Certified in Cybersecurity (CC)', meta: 'Issued Nov 13, 2025' },
   { name: 'Google (Coursera) – Foundations of Cybersecurity', meta: 'Completed Mar 1, 2024' },
-  { name: 'ISC2 CC – Security Operations (Domain focus)', meta: 'Issued Nov 13, 2025' },
 ];
 
 const skillGroups = [
   {
-    label: 'Security Operations',
+    label: 'Network Infrastructure',
     items: [
-      'Alert triage, evidence validation, and escalation notes.',
-      'Vulnerability scanning and remediation tracking.',
-      'Baseline hardening for IAM and cloud access reviews.',
+      'CCNA-aligned routing, switching, VLAN segmentation, STP, EtherChannel, OSPF, NAT, DHCP, and ACLs.',
+      'Packet Tracer lab design with verification steps, troubleshooting notes, and network diagrams.',
+      'Security-minded infrastructure documentation for handoff and operations.',
     ],
   },
   {
-    label: 'Cloud & Infrastructure',
+    label: 'Security Operations & Detection',
     items: [
-      'Terraform + CloudFormation fundamentals for repeatable builds.',
-      'Linux administration and configuration management (Ansible).',
-      'Containers (Docker, Kubernetes) with secure defaults.',
+      'Microsoft Sentinel and Wazuh workflows for alert triage, evidence validation, and escalation notes.',
+      'Vulnerability scanning, remediation tracking, and defensive reporting.',
+      'MITRE-informed investigation habits from HTB/TryHackMe practice.',
     ],
   },
   {
-    label: 'Detection & Monitoring',
+    label: 'Cloud, IAM & Hardening',
     items: [
-      'Wazuh/SIEM lab workflows and log correlation.',
-      'Prometheus/Grafana dashboards and alerting basics.',
-      'ELK/Splunk log pipelines and analysis basics.',
+      'Cloud security fundamentals across Azure/AWS, access reviews, and least-privilege baselines.',
+      'Linux administration, SSH hardening, logging, and configuration management.',
+      'Email and DNS security controls including TLS and SPF/DKIM/DMARC.',
     ],
   },
   {
-    label: 'Offensive & Testing Tools',
+    label: 'DevSecOps & Automation',
     items: [
-      'Kali Linux, Nmap, Burp Suite, Metasploit, Wireshark.',
-      'OWASP testing mindset: recon, exploit, validate, mitigate.',
-    ],
-  },
-  {
-    label: 'CI/CD & Collaboration',
-    items: [
-      'Jenkins, GitHub Actions, GitLab CI for build + deploy.',
-      'Git-based workflows with reviews and release hygiene.',
+      'Jenkins, GitHub Actions, and GitLab CI for build/test/deploy pipelines.',
+      'Terraform + CloudFormation fundamentals for repeatable infrastructure builds.',
+      'Docker/Kubernetes basics with monitoring via Prometheus, Grafana, ELK, and Splunk.',
     ],
   },
 ];
@@ -103,22 +93,22 @@ const timeline = [
   {
     year: '2022–2023',
     title: 'DevOps / Security Support Engineer (Accenture)',
-    description: 'CI/CD and ops support, incident investigations, vulnerability remediation tracking, IAM support, and automation scripts for investigations/reporting.',
+    description: 'Supported enterprise CI/CD and operations while assisting incident investigation, vulnerability remediation tracking, IAM access support, and automation-driven reporting.',
   },
   {
     year: '2024–2025',
     title: 'MS in Cybersecurity (University of North Texas)',
-    description: 'SOC-style labs, vulnerability assessment labs (Nmap/Nessus/ZAP), log analysis, and security documentation/writeups.',
+    description: 'Completed SOC-style labs, vulnerability assessment labs with Nmap/Nessus/ZAP, log analysis, network security coursework, and security documentation/writeups.',
   },
   {
     year: '2025–Present',
-    title: 'DevSecOps Learning & Hands-on Practice',
-    description: 'Terraform, GitHub Actions, Docker/Kubernetes, Prometheus/Grafana, plus HTB/TryHackMe lab practice to strengthen security fundamentals.',
+    title: 'CCNA-Certified Security & Infrastructure Labs',
+    description: 'Built CCNA enterprise campus, Microsoft Sentinel, Wazuh, SMTP security, and HTB labs to connect network fundamentals with detection and defensive operations.',
   },
 ];
 ---
 
-<BaseLayout title="Sri Vibhav Raju Chennamadhava | DevSecOps • DevOps • Cybersecurity" description="Portfolio for Sri Vibhav Raju Chennamadhava: DevOps automation, IaC, containers, monitoring, and cybersecurity fundamentals (SIEM, vulnerability management, cloud/IAM).">
+<BaseLayout title="Sri Vibhav Raju Chennamadhava | DevSecOps • DevOps • Cybersecurity" description="Portfolio for Sri Vibhav Raju Chennamadhava: CCNA-certified cybersecurity, secure network infrastructure, SOC labs, cloud/IAM security, and DevSecOps automation.">
   <Header currentPage="home" />
 
   <main>
@@ -133,7 +123,7 @@ const timeline = [
             Projects & Labs
           </h2>
           <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
-            Security-focused projects with clear outcomes, technical stack, and proof links.
+            Network infrastructure and cybersecurity labs prioritized around CCNA enterprise design, SOC detection, endpoint telemetry, email security, and practical reporting.
           </p>
         </div>
 
@@ -160,7 +150,7 @@ const timeline = [
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6" data-animate="fade-up">
-              Core Skills
+              Core Skills for Security & Infrastructure
             </h2>
             <div class="space-y-5">
               {skillGroups.map((g, idx) => (
@@ -192,7 +182,7 @@ const timeline = [
             <div class="mt-6" data-animate="fade-up" data-delay="400">
               <Button href="/resume.pdf" variant="secondary" external>
                 <i data-lucide="file-text" class="w-5 h-5"></i>
-                Download resume
+                Download current resume
               </Button>
             </div>
           </div>
@@ -240,7 +230,7 @@ const timeline = [
             What I Work On
           </h2>
           <p class="text-lg text-text-secondary" data-animate="fade-up" data-delay="100">
-            DevOps practices with security-first fundamentals.
+            CCNA-certified network infrastructure, SOC detection, cloud/IAM hardening, and DevSecOps automation.
           </p>
         </div>
 
@@ -277,7 +267,7 @@ const timeline = [
             CTF Profiles
           </h2>
           <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
-            Active practice on Hack The Box and TryHackMe.
+            Hands-on offensive practice used to strengthen defensive reporting, root-cause analysis, and mitigation recommendations.
           </p>
         </div>
 
@@ -316,10 +306,10 @@ const timeline = [
       <div class="container">
         <div class="max-w-3xl mx-auto text-center" data-animate="fade-up">
           <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            Let’s work together
+            Let’s secure reliable infrastructure
           </h2>
           <p class="text-lg text-text-secondary mb-8">
-            Open to DevOps, DevSecOps, SOC, and Cloud Security roles.
+            Open to SOC Analyst, Security Engineer, Network Security, Cloud Security, and DevSecOps roles.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/contact" variant="primary">
