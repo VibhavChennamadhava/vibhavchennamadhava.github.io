@@ -5,47 +5,58 @@ import Footer from '../components/Footer.astro';
 import Button from '../components/Button.astro';
 
 const devopsSkills = [
+  { category: 'Network Infrastructure', items: ['Cisco IOS', 'VLANs', 'STP', 'EtherChannel', 'OSPF', 'ACLs', 'NAT', 'DHCP'] },
   { category: 'Version Control & Collaboration', items: ['Git', 'GitHub', 'GitLab', 'Bitbucket'] },
   { category: 'CI/CD', items: ['Jenkins', 'GitHub Actions', 'GitLab CI', 'Bamboo'] },
   { category: 'Infrastructure as Code', items: ['Terraform', 'AWS CloudFormation', 'Ansible', 'Puppet', 'Chef'] },
   { category: 'Containers & Orchestration', items: ['Docker', 'Kubernetes (K8s)', 'OpenShift', 'Nomad'] },
   { category: 'Monitoring & Logging', items: ['Prometheus', 'Grafana', 'Datadog', 'ELK Stack', 'Splunk'] },
-  { category: 'Planning & Delivery', items: ['Jira', 'Trello', 'Confluence', 'ClickUp'] },
-  { category: 'Security & Quality', items: ['HashiCorp Vault', 'SonarQube'] },
+  { category: 'Security & Quality', items: ['HashiCorp Vault', 'SonarQube', 'Secure configuration baselines'] },
 ];
 
 const securitySkills = [
-  { category: 'SIEM / Monitoring', items: ['Splunk', 'IBM QRadar', 'AlienVault', 'SolarWinds'] },
+  { category: 'SIEM / Monitoring', items: ['Microsoft Sentinel', 'Wazuh', 'Splunk', 'IBM QRadar', 'AlienVault'] },
   { category: 'Vulnerability Management', items: ['Nessus', 'Nmap', 'OpenVAS', 'Qualys', 'Nexpose'] },
   { category: 'Network Security', items: ['Wireshark', 'Snort', 'Firewalls (Cisco ASA, Fortinet)', 'VPN', 'IDS/IPS'] },
+  { category: 'Cloud & IAM Security', items: ['Azure fundamentals', 'AWS fundamentals', 'IAM reviews', 'Least privilege', 'Zero Trust'] },
   { category: 'Penetration Testing', items: ['Kali Linux', 'Metasploit', 'OWASP ZAP', 'Nikto'] },
   { category: 'Endpoint Security', items: ['CrowdStrike', 'Symantec', 'McAfee', 'OSSEC'] },
 ];
 
 const keywords = [
-  'Network Security', 'Incident Response', 'Risk Management', 'Threat Intelligence',
+  'CCNA', 'Enterprise Campus Networking', 'Network Security', 'Incident Response', 'Risk Management', 'Threat Intelligence',
   'Identity & Access Management (IAM)', 'Cloud Security (AWS, Azure)',
   'Vulnerability Management', 'Risk Assessment', 'Compliance (GDPR, HIPAA)',
-  'MITRE ATT&CK', 'Zero Trust', 'NIST', 'SASE',
+  'MITRE ATT&CK', 'Zero Trust', 'NIST', 'SASE', 'VLANs', 'OSPF', 'ACLs',
   'Threat Hunting', 'Digital Forensics', 'Data Loss Prevention (DLP)',
   'Python', 'Bash/Shell Scripting', 'PowerShell', 'SQL', 'Cryptography',
 ];
 
 const timeline = [
   {
+    year: '2021–2022',
+    title: 'Network & Cybersecurity Fundamentals (Netcenter)',
+    description: 'Built a foundation in networking, Linux, troubleshooting, and security concepts through Netcenter coursework and hands-on lab practice.',
+  },
+  {
+    year: '2022',
+    title: 'Community Technology Support (Community Dreams Foundation)',
+    description: 'Supported community-focused technology initiatives with practical troubleshooting, documentation, and user-centered service delivery.',
+  },
+  {
     year: '2022–2023',
     title: 'DevOps / Security Support Engineer (Accenture)',
-    description: 'CI/CD and ops support, incident investigations, vulnerability remediation tracking, IAM support, and automation scripts for investigations/reporting.',
+    description: 'Supported enterprise CI/CD and operations, assisted incident investigations, tracked vulnerability remediation, handled IAM access support, and automated reporting workflows.',
   },
   {
     year: '2024–2025',
     title: 'MS in Cybersecurity (University of North Texas)',
-    description: 'SOC-style labs, vulnerability assessment labs (Nmap/Nessus/ZAP), log analysis, and security documentation/writeups.',
+    description: 'Completed SOC-style labs, vulnerability assessment labs with Nmap/Nessus/ZAP, log analysis, network security coursework, and security documentation/writeups.',
   },
   {
     year: '2025–Present',
-    title: 'DevSecOps Learning & Hands-on Practice',
-    description: 'Terraform, GitHub Actions, Docker/Kubernetes, Prometheus/Grafana, plus HTB/TryHackMe lab practice to strengthen security fundamentals.',
+    title: 'CCNA-Certified Security & Infrastructure Practice',
+    description: 'Built CCNA enterprise campus, Microsoft Sentinel, Wazuh, SMTP security, and HTB labs to connect routing/switching fundamentals with defensive operations.',
   },
 ];
 
@@ -71,7 +82,7 @@ const ctfProfiles = [
 ];
 ---
 
-<BaseLayout title="About - Vibhav Chennamadhava" description="DevSecOps, cybersecurity, and cloud/DevOps portfolio for Vibhav Chennamadhava">
+<BaseLayout title="About - Vibhav Chennamadhava" description="CCNA-certified cybersecurity, secure network infrastructure, cloud/IAM, and DevSecOps portfolio for Vibhav Chennamadhava">
   <Header currentPage="about" />
 
   <main class="pt-[72px]">
@@ -93,10 +104,10 @@ const ctfProfiles = [
                 Sri Vibhav Raju Chennamadhava
               </h1>
               <p class="text-xl text-accent-coral font-medium mb-4">
-                DevSecOps • DevOps • Cybersecurity • Cloud/IAM
+                CCNA-Certified Cybersecurity • Network Infrastructure • Cloud/IAM
               </p>
               <p class="text-text-secondary text-lg mb-6">
-                Hands-on with DevOps automation (CI/CD, Terraform/IaC, Docker/Kubernetes, monitoring) and security operations fundamentals (SIEM, incident response support, vulnerability management, and cloud/IAM).
+                CCNA-certified cybersecurity and infrastructure professional focused on secure enterprise networks, SOC detection, vulnerability management, IAM, and DevSecOps automation. I connect routing/switching fundamentals with practical security operations so infrastructure is resilient, observable, and defensible.
               </p>
 
               <!-- Location -->
@@ -134,10 +145,10 @@ const ctfProfiles = [
             What I Focus On
           </h2>
           <p class="text-xl text-text-secondary mb-8" data-animate="fade-up" data-delay="100">
-            "Automation you can trust, and security you can prove."
+            "Secure networks you can operate, monitor, and prove."
           </p>
           <p class="text-text-muted" data-animate="fade-up" data-delay="200">
-            I like building reliable pipelines, repeatable infrastructure, and clean monitoring—while keeping security fundamentals strong through logs, vulnerability remediation, and lab practice.
+            I focus on CCNA-grounded network infrastructure, SIEM detection, vulnerability remediation, cloud/IAM hardening, and DevSecOps automation. My labs emphasize documented designs, verification steps, and clear evidence that a control or workflow works as intended.
           </p>
         </div>
       </div>
@@ -181,7 +192,7 @@ const ctfProfiles = [
     <section class="py-16 bg-bg-primary">
       <div class="container">
         <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-12" data-animate="fade-up">
-          DevOps Tooling
+          Infrastructure & DevSecOps Tooling
         </h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -210,7 +221,7 @@ const ctfProfiles = [
     <section class="py-16 bg-bg-secondary">
       <div class="container">
         <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-12" data-animate="fade-up">
-          Cybersecurity Tools
+          Cybersecurity & Detection Tools
         </h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -294,10 +305,10 @@ const ctfProfiles = [
       <div class="container">
         <div class="max-w-2xl mx-auto text-center" data-animate="fade-up">
           <h2 class="text-3xl font-bold text-text-primary mb-4">
-            Want to connect?
+            Need security-minded infrastructure support?
           </h2>
           <p class="text-text-secondary mb-8">
-            Open to DevOps / DevSecOps / cybersecurity opportunities.
+            Open to SOC Analyst, Security Engineer, Network Security, Cloud Security, and DevSecOps opportunities.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="https://github.com/VibhavChennamadhava" variant="primary" external>
